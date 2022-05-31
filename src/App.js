@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import logo from "./logo.png"
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Button } from 'react-bootstrap';
+import Frase from "./components/Frase"
+import {useState, useEffect} from "react"
 
 function App() {
+  const [personaje,setPersonaje] = useState({})
+
+  useEffect(()=>{
+consultaAPI();
+  },[]);
+
+const consultaAPI = async()=>{
+const respuesta = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes");
+const dato =  await respuesta.json();
+console.log(respuesta);
+console.log(dato[0]);
+//guardar los datos dentro del state
+setPersonaje(dato[0]);
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <section className='container my-5 d-flex flex-column align-items-center'>
+     <img src={logo} alt="logo de los Simpsons" />
+     <Button variant="warning" className="w-75 my-5" onClick={()=>consultaAPI()}>Obtener frase</Button>
+     <Frase personaje={personaje}></Frase>
+   </section>
   );
 }
 
