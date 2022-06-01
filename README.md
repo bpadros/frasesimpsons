@@ -8,5 +8,5 @@ La web es sobre una API , en donde al clickear en un boton obtenemos diferentes 
 
 ### Link de la API que usamos para nuestra pagina web
 
-[Aqui] (https://thesimpsonsquoteapi.glitch.me/)
+https://thesimpsonsquoteapi.glitch.me/
 
