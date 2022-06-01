@@ -10,3 +10,10 @@ La web es sobre una API , en donde al clickear en un boton obtenemos diferentes 
 
 https://thesimpsonsquoteapi.glitch.me/
 
+### Librerias implementadas
+
+- [Bootstrap 5.1](https://getbootstrap.com/)
+
+### Autor
+
+Benjamin Padros
